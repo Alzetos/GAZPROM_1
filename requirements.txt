@@ -1,0 +1,12 @@
+customtkinter
+Pillow
+paddlepaddle
+paddleocr>=2.6.2
+PyMuPDF
+opencv-python
+numpy
+pydantic
+pandas
+openpyxl
+llama-cpp-python
+qrcode

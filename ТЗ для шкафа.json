@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Модуль процессора M1201E",
+    "article": "TREI.421457.001",
+    "quantity": 1,
+    "pages": "12 листов",
+    "certificate": "ЕАЭС N RU Д-RU.АД07.В.00001"
+  },
+  {
+    "name": "Блок питания 24В 5А",
+    "article": "DR-120-24",
+    "quantity": 2,
+    "pages": "4 листа",
+    "certificate": "-"
+  },
+  {
+    "name": "Автоматический выключатель 2-полюсный",
+    "article": "S202 C6",
+    "quantity": 1,
+    "pages": "2 листа",
+    "certificate": "ЕАЭС N RU Д-DE.АД01.В.00002"
+  },
+  {
+    "name": "Клеммный блок проходной",
+    "article": "PT 2.5",
+    "quantity": 50,
+    "pages": "1 лист",
+    "certificate": "-"
+  }
+]
