@@ -49,6 +49,10 @@ def load_memory() -> str:
     try:
         with open("memory.json", "r", encoding="utf-8") as f:
             memory_data = json.load(f)
+
+            if not isinstance(memory_data, list):
+                return ""
+
             if not memory_data:
                 return ""
 
@@ -58,6 +62,7 @@ def load_memory() -> str:
             return memory_promt
     except (FileNotFoundError, json.JSONDecodeError):
         return ""
+
 
 
 def clean_json_bbox(raw_json_str: str) -> str:
@@ -72,7 +77,7 @@ def clean_json_bbox(raw_json_str: str) -> str:
 
 
 def process_document(ocr_json_str: str) -> Optional[ExtractedDocument]:
-    print("--- [AGENT 1] ФУНКЦИЯ ЗАПУЩЕНА ---")  # <--- Добавь это
+    print("[AGENT 1] ФУНКЦИЯ ЗАПУЩЕНА") 
     logger.info("Агент 1 запущен")
     optimized_json = clean_json_bbox(ocr_json_str)
 
@@ -117,9 +122,6 @@ def process_document(ocr_json_str: str) -> Optional[ExtractedDocument]:
 
         print("[AGENT 1] ДАННЫЕ УСПЕШНО ПРОВЕРЕНЫ И ИЗВЛЕЧЕНЫ!")
         logger.info(f"Извлечено {len(parsed_data.items)} позиций")
-
-        json_str = response["choices"][0]["message"]["content"]
-        parsed_data = ExtractedDocument.model_validate_json(json_str)
 
         print("[AGENT 1] ОТВЕТ УСПЕШНО ПОЛУЧЕН!")
         logger.info(f"Извлечено {len(parsed_data.items)} позиций")
