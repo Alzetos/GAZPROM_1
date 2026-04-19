@@ -25,7 +25,7 @@ def add_to_memory(
     memory_data.append(new_entry)
 
     if len(memory_data) > 30:
-        memory_data = memory_data[:-30]
+        memory_data = memory_data[-30:]
     with open(memory_file, "w", encoding="utf-8") as f:
         json.dump(memory_data, ensure_ascii=False, indent=2)
     print("Память обновлена")
